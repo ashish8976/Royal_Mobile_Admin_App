@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#BDB4B4"
+    tools:context=".product.AddProductActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+         android:id="@+id/productId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:hint="Product id"
+        android:layout_margin="10dp">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edtProductId"
+        android:textColor="@color/black"
+        android:background="@drawable/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_below="@+id/productId"
+        android:id="@+id/productName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:hint="Product Name"
+        android:layout_margin="10dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtproductName"
+            android:textColor="@color/black"
+            android:background="@drawable/background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_below="@+id/productName"
+        android:id="@+id/productDesc"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/background"
+        android:hint="Product Description"
+        android:layout_margin="10dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtProductDesc"
+            android:textColor="@color/black"
+            android:background="@drawable/background"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addMobiles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/productbackground"
+        android:text="Add Mobiles"
+        android:layout_above="@+id/addProductButton"
+        android:layout_margin="20dp"
+        android:padding="15dp"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addAccessories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/addProductButton"
+        android:layout_margin="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_toEndOf="@+id/addMobiles"
+        android:background="@drawable/productbackground"
+        android:padding="15dp"
+        android:text="Add Accessories" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addProductButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/productbackground"
+        android:text="Add Product"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:layout_margin="15dp"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>

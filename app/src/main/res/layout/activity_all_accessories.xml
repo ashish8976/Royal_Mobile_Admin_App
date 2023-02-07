@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BCB6B6"
+    tools:context=".product.AllAccessoriesActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/accessToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        app:menu="@menu/search_menu"
+        app:title="Accessories"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/AllMobilesRecycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/accessToolbar"/>
+
+</RelativeLayout>
