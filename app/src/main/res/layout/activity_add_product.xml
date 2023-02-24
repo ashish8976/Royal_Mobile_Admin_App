@@ -64,6 +64,30 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <LinearLayout
+        android:layout_below="@+id/productDesc"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtBrandName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brand Name"
+            android:textSize="16sp"
+            android:layout_margin="20dp"/>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_marginTop="20dp"
+            android:id="@+id/AllBrands"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addMobiles"
         android:layout_width="wrap_content"

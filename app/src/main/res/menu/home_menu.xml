@@ -6,12 +6,10 @@
         android:title="Home"
         android:icon="@drawable/baseline_home_24"/>
 
-    <item
-        android:id="@+id/product_menu"
-        android:title="Product"/>
+
 
     <item
-        android:id="@+id/oreder_menu"
+        android:id="@+id/order_menu"
         android:title="Order"
         android:icon="@drawable/baseline_shopping_cart_24"/>
 
@@ -21,6 +19,7 @@
 
     <item
         android:id="@+id/profile_menu"
-        android:title="Profile"/>
+        android:title="Profile"
+        android:icon="@drawable/baseline_account_circle_24"/>
 
 </menu>

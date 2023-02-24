@@ -3,9 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="#BCB6B6"
     tools:context=".HomeFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/homeToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Home"
+        android:background="@color/white"/>
 
 
     <RelativeLayout
@@ -33,7 +41,7 @@
             android:layout_below="@+id/addProduct"/>
 
         <ImageView
-            android:id="@+id/allProduct"
+            android:id="@+id/addBrand"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:src="@drawable/allproduct"
@@ -44,8 +52,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/allProduct"
-            android:text="All Product"
+            android:layout_below="@+id/addBrand"
+            android:text="Add Brand"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="20dp"
             android:textSize="20dp"

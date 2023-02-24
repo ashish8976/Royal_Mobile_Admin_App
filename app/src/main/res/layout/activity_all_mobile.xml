@@ -13,13 +13,16 @@
        android:layout_height="wrap_content"
        android:background="@drawable/background"
        app:menu="@menu/search_menu"
-       app:title="Mobiles"/>
+       app:title="Mobiles"
+       />
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/AllMobilesRecycle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/mobileToolbar"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/AllMobilesRecycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/product_items"
+            android:layout_below="@+id/mobileToolbar"
+            />
 
 </RelativeLayout>
