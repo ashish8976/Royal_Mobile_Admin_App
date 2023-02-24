@@ -15,10 +15,10 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        replaceFragment(HomeFragment())
         binding.bottomNavigation.setOnItemSelectedListener {
 
             when(it.itemId){
-
                 R.id.home -> replaceFragment(HomeFragment())
                 R.id.order_menu -> replaceFragment(OrderFragment())
                 R.id.delivery_menu -> replaceFragment(DeliveryFragment())
