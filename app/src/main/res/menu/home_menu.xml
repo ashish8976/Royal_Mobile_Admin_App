@@ -15,7 +15,8 @@
 
     <item
         android:id="@+id/delivery_menu"
-        android:title="Delivery"/>
+        android:title="Delivery"
+        android:icon="@drawable/delivery_icon"/>
 
     <item
         android:id="@+id/profile_menu"

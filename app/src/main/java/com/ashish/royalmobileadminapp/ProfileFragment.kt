@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.ashish.royalmobileadminapp.Constants.user_email
-import com.ashish.royalmobileadminapp.databinding.FragmentProductBinding
+import com.ashish.royalmobileadminapp.utils.Constants.user_email
 import com.ashish.royalmobileadminapp.databinding.FragmentProfileBinding
+import com.ashish.royalmobileadminapp.utils.Constants
 
 
 class ProfileFragment : Fragment() {

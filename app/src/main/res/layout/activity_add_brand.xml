@@ -55,7 +55,14 @@
         android:textColor="@color/black"
         android:background="@drawable/productbackground"/>
 
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
+        android:textColor="#EC080F"
+        android:textSize="20dp"
+        android:id="@+id/error_msg"/>
 
 
 </LinearLayout>

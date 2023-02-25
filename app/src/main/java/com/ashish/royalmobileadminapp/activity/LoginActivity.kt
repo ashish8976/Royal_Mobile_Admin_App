@@ -5,10 +5,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.ashish.royalmobileadminapp.Constants.user_email
-import com.ashish.royalmobileadminapp.Constants.user_pref
-import com.ashish.royalmobileadminapp.R
-import com.ashish.royalmobileadminapp.data.model.Admin_Login_Request
+import com.ashish.royalmobileadminapp.utils.Constants.user_email
+import com.ashish.royalmobileadminapp.utils.Constants.user_pref
+import com.ashish.royalmobileadminapp.data.auth.Admin_Login_Request
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
 import com.ashish.royalmobileadminapp.databinding.ActivityLoginBinding
 import com.surajmanshal.mannsignadmin.network.NetworkService
