@@ -79,7 +79,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Simple_Response?>, t: Throwable) {
-                binding.loginTitle.text = t.message.toString()
+//                binding.loginTitle.text = t.message.toString()
                 Toast.makeText(this@LoginActivity, t.message.toString(), Toast.LENGTH_LONG).show()
             }
         })
