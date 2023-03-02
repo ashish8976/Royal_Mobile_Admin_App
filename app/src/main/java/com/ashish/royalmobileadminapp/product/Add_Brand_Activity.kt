@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.ashish.royalmobileadminapp.R
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
 import com.ashish.royalmobileadminapp.databinding.ActivityAddBrandBinding
+import com.ashish.royalmobileadminapp.network.Network_Service
 import com.ashish.royalmobileadminapp.utils.Constants
 import com.ashish.royalmobileadminapp.utils.Constants.brand
 import com.example.data.model.Brand
@@ -34,7 +35,7 @@ class Add_Brand_Activity : AppCompatActivity() {
         val brand_id = binding.edtBrandId.text.toString().toInt()
         val brand_name = binding.edtBrandName.text.toString()
 
-        val data = NetworkService.networkInstance
+        val data = Network_Service.networkInstance
 
         val sharedPreferences = getSharedPreferences(brand,Context.MODE_PRIVATE)
 

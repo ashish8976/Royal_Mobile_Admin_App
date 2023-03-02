@@ -10,7 +10,7 @@ import com.ashish.royalmobileadminapp.utils.Constants.user_pref
 import com.ashish.royalmobileadminapp.data.auth.Admin_Login_Request
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
 import com.ashish.royalmobileadminapp.databinding.ActivityLoginBinding
-import com.surajmanshal.mannsignadmin.network.NetworkService
+import com.ashish.royalmobileadminapp.network.Network_Service
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -48,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
 
         val email = binding.edtEmail.text.toString()
         val pass = binding.edtPassword.text.toString()
-        val db = NetworkService.networkInstance
+        val db = Network_Service.networkInstance
         val sharedPreferences= getSharedPreferences(user_pref, Context.MODE_PRIVATE)
 
         val r = db.login(Admin_Login_Request(adminEmail = email, adminPassword = pass))

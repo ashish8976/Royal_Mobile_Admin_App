@@ -1,4 +1,4 @@
-package com.example.data.model
+package com.ashish.royalmobileadminapp.data.product
 
 data class Product(
     val product_id: Int,
