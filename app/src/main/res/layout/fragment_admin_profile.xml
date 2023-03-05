@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment"
-    android:background="#D8D3D3">
+    android:background="#D8D3D3"
+    tools:context=".AdminProfileFragment">
 
     <ImageView
         android:id="@+id/adminAccountImage"
@@ -26,11 +26,15 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:background="#1D35AC"
+        android:background="#094AF1"
         android:padding="10dp"
         android:text="Upload Image"
-        android:textColor="@color/black"
-        android:textSize="14sp" />
+        android:textColor="#0E0E0D"
+        android:textSize="14sp"
+        tools:ignore="TextContrastCheck" />
+
+
+
 
     <LinearLayout
         android:id="@+id/admin_profile"
@@ -65,5 +69,4 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:textSize="20sp"/>
-
 </RelativeLayout>

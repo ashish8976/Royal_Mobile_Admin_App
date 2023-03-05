@@ -8,12 +8,17 @@
     tools:context=".product.AddMobileActivity">
 
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:id="@+id/mobileImages"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_centerHorizontal="true"/>
+        android:background="@color/white"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginBottom="30dp"
+        android:contentDescription="Select Image" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,7 +27,36 @@
         android:orientation="vertical"
         android:layout_below="@+id/mobileImages"
         android:layout_margin="10dp"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Color : "
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"/>
+            
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:id="@+id/colorSpinner"
+                android:spinnerMode="dialog"
+                android:background="@drawable/color_blob"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+        </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/MobileId"

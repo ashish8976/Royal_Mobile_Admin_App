@@ -6,4 +6,5 @@ object Constants {
 
     const val brand = ""
     const val REQUEST_CODE_IMAGE=101
+    const val TAG = "MyViewModel"
 }

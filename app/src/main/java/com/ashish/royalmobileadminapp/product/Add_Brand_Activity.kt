@@ -25,7 +25,18 @@ class Add_Brand_Activity : AppCompatActivity() {
         setContentView(binding.root)
 
        binding.addBrandButton.setOnClickListener {
-            addBrandFunction()
+
+           val id = binding.edtBrandId.toString()
+           val name = binding.edtBrandName.toString()
+           if (id.isEmpty() && name.isEmpty())
+           {
+                Toast.makeText(this,"Some field are missing",Toast.LENGTH_LONG).show()
+           }
+           else{
+               addBrandFunction()
+
+           }
+
            binding.edtBrandId.text?.clear()
            binding.edtBrandName.text?.clear()
        }
