@@ -30,39 +30,33 @@
         android:layout_margin="10dp"
         android:layout_marginTop="30dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/ColorId"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background"
-            android:hint="Colour Id">
+            android:orientation="horizontal">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtColorId"
-                android:textColor="@color/black"
-                android:background="@drawable/background"
-                android:layout_width="match_parent"
+            <TextView
+
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                tools:ignore="TouchTargetSizeCheck" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Color_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background"
-            android:hint="Colour Id">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtColor_name"
+                android:text="Color : "
                 android:textColor="@color/black"
-                android:background="@drawable/background"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:id="@+id/colorSpinner"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+        </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/MobileId"

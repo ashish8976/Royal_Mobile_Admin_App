@@ -4,11 +4,16 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract.CommonDataKinds.Im
 import android.provider.MediaStore
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -57,6 +62,45 @@ class AddMobileActivity : AppCompatActivity() {
         {
             ActivityCompat.requestPermissions(this, PERMISSION_STORAGE, REQUST_EXTERNAL_STORAGE)
         }
+
+
+        val colors = listOf(
+            "Red" to "#FF0000",
+            "Green" to "#00FF00",
+            "Blue" to "#0000FF",
+        )
+
+        val colorAdapter = ArrayAdapter(
+            this,android.R.layout.simple_spinner_dropdown_item,colors.map { it.first })
+
+        colorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.colorSpinner.adapter = colorAdapter
+
+        binding.colorSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val selectedColor = colors[position].second
+                setSpinnerColor(selectedColor)
+//                Toast.makeText(this@AddMobileActivity,"Selected color : $selectedColor",Toast.LENGTH_LONG).show()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                    Toast.makeText(this@AddMobileActivity,"Nothing selected",Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    private fun setSpinnerColor(color : String)
+    {
+        val drawble = GradientDrawable()
+        drawble.setColor(Color.parseColor(color))
+        drawble.shape = GradientDrawable.RECTANGLE
+        drawble.setStroke(2,Color.BLACK)
+        binding.colorSpinner.background = drawble
     }
 
     private fun isStoragePermissionGranted() : Boolean
