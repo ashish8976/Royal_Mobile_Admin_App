@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
+import android.graphics.Color
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
@@ -38,18 +39,19 @@ class ColorSpinnerAdapter(context: Context,list: List<ColorObject>)
         val colorObject : ColorObject = getItem(position) ?: return view
 
         val colorNameItem = view.findViewById<TextView>(R.id.colorName)
-        val colorHexItem = view.findViewById<TextView>(R.id.colorHexa)
-        val colorNameBg = view.findViewById<TextView>(R.id.colorNameBg)
-        val view = view.findViewById<View>(R.id.colorBlob)
-        val colorBlob = view as? TextView
+        val colorHexItem = view.findViewById<TextView>(R.id.colorHex)
+        val colorNameBg = view.findViewById<TextView>(R.id.colorNameBG)
+        val colorBlob = view.findViewById<View>(R.id.colorBlob)
+//        val view = view.findViewById<View>(R.id.colorBlob)
+//        val colorBlob = view as? TextView
 
 
-        colorNameBg?.text = colorObject.nm
-        colorNameBg?.setTextColor(android.graphics.Color.parseColor(colorObject.contrastHex))
-        colorNameItem?.text = colorObject.nm
+        colorNameBg?.text = colorObject.name
+        colorNameBg?.setTextColor(Color.parseColor(colorObject.contrastHex))
+        colorNameItem?.text = colorObject.name
         colorHexItem?.text = colorObject.hex
 
-        colorBlob?.background?.setTint(android.graphics.Color.parseColor(colorObject.haxHash))
+        colorBlob?.background?.setTint(Color.parseColor(colorObject.hexHash))
 
         return view
 

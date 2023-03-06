@@ -4,14 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/color_blob"
-        android:id="@+id/colorBlob"/>
+   <View
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@drawable/color_blob"
+       android:foregroundGravity="center"
+       android:id="@+id/colorBlob"/>
 
     <TextView
-        android:id="@+id/colorNameBg"
+        android:id="@+id/colorNameBG"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"

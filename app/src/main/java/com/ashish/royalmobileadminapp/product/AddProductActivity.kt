@@ -31,6 +31,6 @@ class AddProductActivity : AppCompatActivity() {
     }
 
     private fun addProduct() {
-        TODO("Not yet implemented")
+
     }
 }

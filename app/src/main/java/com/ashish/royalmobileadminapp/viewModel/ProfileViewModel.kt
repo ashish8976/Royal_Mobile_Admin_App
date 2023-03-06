@@ -36,9 +36,7 @@ class ProfileViewModel : ViewModel()
                 withContext(Dispatchers.Main)
                 {
                         Log.d(TAG, "Profile Image uploaded successfully :")
-
                 }
-
             }
             catch (e :Exception)
             {

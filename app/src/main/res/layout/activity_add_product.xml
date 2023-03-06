@@ -86,6 +86,26 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_below="@+id/product_category"
+        android:id="@+id/productBrand_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:hint="Brand  Name : "
+        android:layout_margin="10dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtproduct_Brandname"
+            android:textColor="@color/black"
+            android:background="@drawable/background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addMobiles"
         android:layout_width="wrap_content"

@@ -1,10 +1,12 @@
 package com.ashish.royalmobileadminapp.network
 
+import android.telecom.Call.Details
 import com.ashish.royalmobileadminapp.data.auth.Admin_Login_Request
 import com.ashish.royalmobileadminapp.data.product.Accessories
 import com.ashish.royalmobileadminapp.data.product.Color
 import com.ashish.royalmobileadminapp.data.product.Mobile
 import com.ashish.royalmobileadminapp.data.product.Product
+import com.ashish.royalmobileadminapp.data.response.Image_Response
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
 import com.example.data.model.Brand
 import okhttp3.MultipartBody
@@ -22,7 +24,7 @@ interface NetworkCall_Interface
 
     @Multipart
     @POST("profileImage/upload")
-    fun uploadimage(@Part image: MultipartBody.Part): Call<Simple_Response>
+    fun uploadimage(@Part image: MultipartBody.Part): Call<Image_Response>
 
 
     @POST("product/add")
@@ -55,5 +57,8 @@ interface NetworkCall_Interface
     @GET("product/getAllAccessories")
     fun getAllAccessories(@Body getAllAccessoriesDetails: Accessories) : Call<Simple_Response>
 
+    @GET("brand/getAll")
+    suspend fun getBrand() : List<Brand>
+//    fun getAllBrandName(@Body getAllBrandDetails: Brand) : Call<Simple_Response>
 
 }
