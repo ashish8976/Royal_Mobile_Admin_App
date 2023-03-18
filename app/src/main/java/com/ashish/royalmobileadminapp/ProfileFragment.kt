@@ -83,20 +83,20 @@ class ProfileFragment : Fragment() {
 
         val call = Network_Service.networkInstance.uploadimage(filePart)
 
-        call.enqueue(object : Callback<Image_Response?> {
-            override fun onResponse(
-                call: Call<Image_Response?>,
-                response: Response<Image_Response?>
-            ) {
-                val imageResponse = response.body()
-                Toast.makeText(requireContext(),"Image uploaded successfully $imageResponse",
-                    Toast.LENGTH_LONG).show()
-            }
-
-            override fun onFailure(call: Call<Image_Response?>, t: Throwable) {
-                Toast.makeText(requireContext(),"Image Not  uploaded", Toast.LENGTH_LONG).show()
-            }
-        })
+//        call.enqueue(object : Callback<Image_Response?> {
+//            override fun onResponse(
+//                call: Call<Image_Response?>,
+//                response: Response<Image_Response?>
+//            ) {
+//                val imageResponse = response.body()
+//                Toast.makeText(requireContext(),"Image uploaded successfully $imageResponse",
+//                    Toast.LENGTH_LONG).show()
+//            }
+//
+//            override fun onFailure(call: Call<Image_Response?>, t: Throwable) {
+//                Toast.makeText(requireContext(),"Image Not  uploaded", Toast.LENGTH_LONG).show()
+//            }
+//        })
     }
 
 

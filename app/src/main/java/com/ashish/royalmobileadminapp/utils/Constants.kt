@@ -16,13 +16,4 @@ object Constants {
         Manifest.permission.READ_EXTERNAL_STORAGE,
         Manifest.permission.WRITE_EXTERNAL_STORAGE
     )
-
-
-//    const val REQUEST_EXTERNAL_STORAGE = 2
-//    val PERMISSIONS_STORAGE = arrayOf(
-//        Manifest.permission.READ_EXTERNAL_STORAGE,
-//        Manifest.permission.WRITE_EXTERNAL_STORAGE
-//    )
-
-
 }

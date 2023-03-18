@@ -6,4 +6,4 @@ data class Mobile(
     val ram : String,
     val storage : String,
     val price : Float
-)
+) : java.io.Serializable

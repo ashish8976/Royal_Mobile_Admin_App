@@ -69,6 +69,7 @@
                 android:id="@+id/edtMobileId"
                 android:textColor="@color/black"
                 android:background="@drawable/background"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:ignore="TouchTargetSizeCheck" />
@@ -87,6 +88,7 @@
                 android:id="@+id/edtMobileRam"
                 android:textColor="@color/black"
                 android:background="@drawable/background"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:ignore="TouchTargetSizeCheck" />
@@ -104,6 +106,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtMobileStorage"
                 android:textColor="@color/black"
+                android:inputType="text"
                 android:background="@drawable/background"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -121,6 +124,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtMobilePrice"
+                android:inputType="numberDecimal"
                 android:textColor="@color/black"
                 android:background="@drawable/background"
                 android:layout_width="match_parent"
@@ -137,10 +141,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/productbackground"
-        android:layout_margin="20dp"
         android:text="Add Mobile"
-        android:textSize="18sp"/>
+        android:textSize="18sp" />
 
 
 </RelativeLayout>
