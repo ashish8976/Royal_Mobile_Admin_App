@@ -5,4 +5,4 @@ data class Accessories(
     val product_id : Int,
     val specification : String,
     val price : Float
-)
+):java.io.Serializable

@@ -17,10 +17,5 @@ class AllProductActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        binding.btnAddProduct.setOnClickListener {
-            val intent = Intent(this@AllProductActivity,AddProductActivity::class.java)
-            startActivity(intent)
-        }
-
     }
 }

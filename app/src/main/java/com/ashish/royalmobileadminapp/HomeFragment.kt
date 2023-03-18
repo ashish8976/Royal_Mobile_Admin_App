@@ -21,15 +21,13 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater,container,false)
         return binding.root
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.addProduct.setOnClickListener {
-            val intent = Intent(requireContext(),AllProductActivity::class.java)
+            val intent = Intent(requireContext(),AddProductActivity::class.java)
             startActivity(intent)
         }
 
@@ -45,6 +43,11 @@ class HomeFragment : Fragment() {
 
         binding.allAccessories.setOnClickListener {
             val  intent  = Intent(requireContext(),AllAccessoriesActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.allProductDetails.setOnClickListener {
+            val intent = Intent(requireContext(),AllProductActivity::class.java)
             startActivity(intent)
         }
 

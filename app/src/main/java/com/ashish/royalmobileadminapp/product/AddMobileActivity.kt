@@ -78,7 +78,7 @@ class AddMobileActivity : AppCompatActivity() {
             binding.apply {
                 if (!p.isNullOrEmpty()) {
                     val m = Mobile(
-                        mobile_id = edtMobileId.text.toString().toInt(),
+                        mobile_id = 0,
                         product_id = p.toInt(),
                         ram = edtMobileRam.text.toString(),
                         storage = edtMobileStorage.text.toString(),
@@ -93,12 +93,11 @@ class AddMobileActivity : AppCompatActivity() {
                 }
 
             }
-
-
         }
 
         if (isStoragePermissionGranted()) {
-            ActivityCompat.requestPermissions(this, PERMISSION_STORAGE, REQUST_EXTERNAL_STORAGE)
+            ActivityCompat.requestPermissions(this, PERMISSION_STORAGE,
+                REQUST_EXTERNAL_STORAGE)
         }
 
 
