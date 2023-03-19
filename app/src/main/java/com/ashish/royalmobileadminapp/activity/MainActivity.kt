@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.home -> replaceFragment(HomeFragment())
                 R.id.order_menu -> replaceFragment(OrderFragment())
                 R.id.delivery_menu -> replaceFragment(DeliveryFragment())
-                R.id.profile_menu -> replaceFragment(AdminProfileFragment())
+                R.id.profile_menu -> replaceFragment(ProfileFragment())
                 else ->{
 
                 }

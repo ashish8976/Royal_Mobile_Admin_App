@@ -6,64 +6,56 @@
     tools:context=".ProfileFragment"
     android:background="#D8D3D3">
 
-    <ImageView
-        android:id="@+id/adminAccountImage"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@drawable/baseline_account_circle_24"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        android:focusable="true"/>
+        <ImageView
+            android:id="@+id/adminAccountImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/baseline_account_circle_24"/>
 
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/uploadImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/adminAccountImage"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="#1D35AC"
-        android:padding="10dp"
-        android:text="Upload Image"
-        android:textColor="@color/black"
-        android:textSize="14sp" />
-
-    <LinearLayout
-        android:id="@+id/admin_profile"
-        android:layout_below="@+id/uploadImage"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_marginTop="30dp"
-        android:layout_height="wrap_content">
-
-
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/edEmail"
-            android:layout_margin="20dp"
+        <LinearLayout
+            android:id="@+id/admin_profile"
+            android:layout_below="@+id/adminAccountImage"
+            android:orientation="vertical"
             android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edEmail"
+                    android:layout_margin="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:background="@drawable/textview_background"
+                    android:padding="20dp"/>
+
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/AddAdminButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Email"
-            android:background="@drawable/textview_background"
-            android:padding="20dp"/>
+            android:background="@color/primary_color"
+            android:backgroundTint="@color/primary_color"
+            android:textColor="@color/black"
+            android:text="Add Admin"
+            android:layout_below="@+id/admin_profile"
+            android:layout_margin="10dp"
+            android:padding="5dp"/>
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_color"
+            android:background="@color/primary_color"
+            android:text="Logout"
+            android:layout_below="@+id/AddAdminButton"
+            android:layout_margin="10dp"
+            android:padding="5dp"/>
 
-    </LinearLayout>
-
-
-    <Button
-        android:id="@+id/btnLogout"
-        android:text="Logout"
-        android:layout_marginHorizontal="16dp"
-        android:textAllCaps="false"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:textSize="20sp"/>
 
 </RelativeLayout>

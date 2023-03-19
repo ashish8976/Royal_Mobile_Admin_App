@@ -11,6 +11,7 @@ import com.ashish.royalmobileadminapp.data.product.ProductColor
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
 import com.ashish.royalmobileadminapp.databinding.ActivityAddProductBinding
 import com.ashish.royalmobileadminapp.network.Network_Service
+import com.example.data.model.Brand
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -98,4 +99,22 @@ class AddProductActivity : AppCompatActivity() {
             }
         })
     }
+
+    private suspend  fun fetchBrandName(){
+        Network_Service.networkInstance.getBrand().enqueue(object : Callback<List<Brand>?> {
+            override fun onResponse(call: Call<List<Brand>?>, response: Response<List<Brand>?>) {
+                if (response.isSuccessful)
+                {
+                    val brand = response.body()
+
+
+                }
+            }
+
+            override fun onFailure(call: Call<List<Brand>?>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+    }
 }
+

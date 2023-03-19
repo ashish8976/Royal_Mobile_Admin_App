@@ -15,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.ObservableField
+import com.ashish.royalmobileadminapp.activity.AddAdminActivity
 import com.ashish.royalmobileadminapp.data.response.Image_Response
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
 import com.ashish.royalmobileadminapp.databinding.FragmentProfileBinding
@@ -62,6 +63,11 @@ class ProfileFragment : Fragment() {
             startActivityForResult(intent, REQUEST_CODE_IMAGE)
         }
 
+        binding.AddAdminButton.setOnClickListener {
+             val intent = Intent(requireContext(),AddAdminActivity::class.java)
+            startActivity(intent)
+        }
+
         return binding.root
     }
 
@@ -79,85 +85,18 @@ class ProfileFragment : Fragment() {
 
     private fun uploadImage(file: File) {
         val fileRequestBody = file.asRequestBody("image/*".toMediaTypeOrNull())
-        val filePart = MultipartBody.Part.createFormData("image",file.name,fileRequestBody)
+        val filePart = MultipartBody.Part.createFormData("image", file.name, fileRequestBody)
 
         val call = Network_Service.networkInstance.uploadimage(filePart)
 
-//        call.enqueue(object : Callback<Image_Response?> {
-//            override fun onResponse(
-//                call: Call<Image_Response?>,
-//                response: Response<Image_Response?>
-//            ) {
-//                val imageResponse = response.body()
-//                Toast.makeText(requireContext(),"Image uploaded successfully $imageResponse",
-//                    Toast.LENGTH_LONG).show()
-//            }
-//
-//            override fun onFailure(call: Call<Image_Response?>, t: Throwable) {
-//                Toast.makeText(requireContext(),"Image Not  uploaded", Toast.LENGTH_LONG).show()
-//            }
-//        })
+
     }
-
-
-
-
-
-
 }
 
-//    private fun uploadProfileImage() {
-//        val profileImage = ObservableField<Bitmap>()
-//
-//        CoroutineScope(Dispatchers.IO).launch {
-//            try {
-//                val byteArrayOutputStream = ByteArrayOutputStream()
-//                profileImage.get()?.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream)
-//                val imageBytes = byteArrayOutputStream.toByteArray()
-//                val file = File("storage/images/jpeg")
-//                val requestFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
-//                val multipartBody =
-//                    MultipartBody.Part.createFormData("image", file.name, requestFile)
-//
-//                val response = Network_Service.networkInstance.uploadimage(multipartBody)
-//
-//                withContext(Dispatchers.Main)
-//                {
-//                    Log.d(Constants.TAG, "Profile Image uploaded successfully :")
-//                }
-//            } catch (e: Exception) {
-//                withContext(Dispatchers.IO)
-//                {
-//                    Log.e(Constants.TAG, "Profile Image upload Error: ${e.message}")
-//                }
-//            }
-//        }
-//    }
 
 
-//private fun getRealPathFromUri(context: Context, uri: Uri): String? {
-//    var filePath: String? = null
-//    val wholeID = DocumentsContract.getDocumentId(uri)
-//
-//    val id = wholeID.split(":")[1]
-//    val column = arrayOf(MediaStore.Images.Media.DATA)
-//
-//    val sel = MediaStore.Images.Media._ID + "=?"
-//    val cursor = context?.contentResolver?.query(
-//        MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-//        column, sel, arrayOf(id), null
-//    )
-//
-//    if (cursor != null) {
-//        val columnIndex = cursor.getColumnIndex(column[0])
-//        if (cursor.moveToFirst()) {
-//            filePath = cursor.getString(columnIndex)
-//        }
-//        cursor.close()
-//    }
-//
-//    return filePath
-//}
+
+
 
 
 
