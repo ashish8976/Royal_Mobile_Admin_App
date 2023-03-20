@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.ashish.royalmobileadminapp.R
+import com.ashish.royalmobileadminapp.data.product.Brand
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
 import com.ashish.royalmobileadminapp.databinding.ActivityAddBrandBinding
 import com.ashish.royalmobileadminapp.network.Network_Service
-import com.ashish.royalmobileadminapp.utils.Constants
 import com.ashish.royalmobileadminapp.utils.Constants.brand
-import com.example.data.model.Brand
-import com.surajmanshal.mannsignadmin.network.NetworkService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,9 +34,6 @@ class Add_Brand_Activity : AppCompatActivity() {
                addBrandFunction()
 
            }
-
-           binding.edtBrandId.text?.clear()
-           binding.edtBrandName.text?.clear()
        }
     }
 
@@ -62,16 +57,21 @@ class Add_Brand_Activity : AppCompatActivity() {
                 if (b != null) {
                     if (b.success) {
                         val s = sharedPreferences.edit()
-                        s.putString(brand,brand_id.toString())
+                        s.putString(brand, brand_id.toString())
                         s.apply()
-                        Toast.makeText(this@Add_Brand_Activity,"Brand Added Successfully",Toast.LENGTH_LONG).show()
-                    }
-                    else
-                    {
-                        Toast.makeText(this@Add_Brand_Activity,"Brand Not Added",Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            this@Add_Brand_Activity,
+                            "Brand Added Successfully",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    } else {
+                        Toast.makeText(
+                            this@Add_Brand_Activity,
+                            "Brand Not Added",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
                 }
-
                 else
                 {
                     Toast.makeText(this@Add_Brand_Activity,"Some Problem occur",Toast.LENGTH_LONG).show()

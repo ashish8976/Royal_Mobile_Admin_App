@@ -78,7 +78,7 @@ class AddMobileActivity : AppCompatActivity() {
             binding.apply {
                 if (!p.isNullOrEmpty()) {
                     val m = Mobile(
-                        mobile_id = 0,
+                        mobile_id = edtMobileId.text.toString().toInt(),
                         product_id = p.toInt(),
                         ram = edtMobileRam.text.toString(),
                         storage = edtMobileStorage.text.toString(),
@@ -99,7 +99,6 @@ class AddMobileActivity : AppCompatActivity() {
             ActivityCompat.requestPermissions(this, PERMISSION_STORAGE,
                 REQUST_EXTERNAL_STORAGE)
         }
-
 
         val colors = listOf(
             "Red" to "#FF0000",

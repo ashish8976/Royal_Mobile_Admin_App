@@ -8,7 +8,7 @@ object Constants {
     const val user_register = "register"
     const val user_email = "email"
     const val PICK_IMAGE_REQUEST = 1
-
+    const val category = ""
     const val brand = ""
     const val REQUEST_CODE_IMAGE=101
     const val TAG = "MyViewModel"

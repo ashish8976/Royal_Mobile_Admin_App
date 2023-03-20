@@ -36,15 +36,20 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
-        binding.allMobiles.setOnClickListener {
-            val intent = Intent(requireContext(),AllMobileActivity::class.java)
+        binding.addCategory.setOnClickListener {
+            val intent = Intent(requireContext(),AddCategoryActivity::class.java)
             startActivity(intent)
         }
-
-        binding.allAccessories.setOnClickListener {
-            val  intent  = Intent(requireContext(),AllAccessoriesActivity::class.java)
-            startActivity(intent)
-        }
+//
+//        binding.allMobiles.setOnClickListener {
+//            val intent = Intent(requireContext(),AllMobileActivity::class.java)
+//            startActivity(intent)
+//        }
+//
+//        binding.allAccessories.setOnClickListener {
+//            val  intent  = Intent(requireContext(),AllAccessoriesActivity::class.java)
+//            startActivity(intent)
+//        }
 
         binding.allProductDetails.setOnClickListener {
             val intent = Intent(requireContext(),AllProductActivity::class.java)

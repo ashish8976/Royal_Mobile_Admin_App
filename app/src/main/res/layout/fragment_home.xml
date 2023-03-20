@@ -64,51 +64,6 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/allMobiles"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:clickable="true"
-            android:src="@drawable/mobiles" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="All Mobiles"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:layout_marginLeft="20dp"
-            android:layout_below="@+id/allMobiles"/>
-
-        <ImageView
-            android:id="@+id/allAccessories"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_alignParentEnd="true"
-            android:layout_margin="20dp"
-            android:clickable="true"
-            android:src="@drawable/accessroies" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/allAccessories"
-            android:text="All Accessroies"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="20dp"
-            android:textSize="20dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"/>
-
-    </RelativeLayout>
-
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -132,6 +87,29 @@
             android:textColor="@color/black"
             android:layout_marginLeft="20dp"
             android:layout_below="@+id/allProductDetails"/>
+
+        <ImageView
+            android:id="@+id/addCategory"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:clickable="true"
+            android:src="@drawable/allproduct" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/addCategory"
+            android:text="Add Category"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"/>
 
     </RelativeLayout>
 

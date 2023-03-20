@@ -1,17 +1,23 @@
 package com.ashish.royalmobileadminapp.product
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.ashish.royalmobileadminapp.R
+import com.ashish.royalmobileadminapp.data.product.Brand
 import com.ashish.royalmobileadminapp.data.product.Mobile
 import com.ashish.royalmobileadminapp.data.product.Product
 import com.ashish.royalmobileadminapp.data.product.ProductColor
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
 import com.ashish.royalmobileadminapp.databinding.ActivityAddProductBinding
 import com.ashish.royalmobileadminapp.network.Network_Service
-import com.example.data.model.Brand
+import kotlinx.coroutines.selects.select
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,6 +25,7 @@ import retrofit2.Response
 class AddProductActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityAddProductBinding
+    val arr = mutableListOf<Brand>()
     var mProduct = Product()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,34 +34,35 @@ class AddProductActivity : AppCompatActivity() {
         //intent.getSerializableExtra("product") as Product
         Toast.makeText(this, "$mProduct", Toast.LENGTH_SHORT).show()
 
+        getAllBrandSpinner()
+
         binding.addMobiles.setOnClickListener {
             val intent = Intent(this, AddMobileActivity::class.java)
             intent.putExtra("pId",binding.edtProductId.text.toString())
             startActivityForResult(intent, 2)
         }
-
         binding.addAccessories.setOnClickListener {
             val intent = Intent(this, AddAccessroiesActivity::class.java)
             intent.putExtra("pId",binding.edtProductId.text.toString())
             startActivityForResult(intent, 3)
         }
-
         binding.addProductButton.setOnClickListener {
             setupProduct()
             println("$mProduct")
             addProduct()
         }
-
     }
-
     private fun setupProduct() {
         mProduct.apply {
             binding.apply {
                 product_id = edtProductId.text.toString().toInt()
                 product_name = edtproductName.text.toString()
                 product_desc = edtProductDesc.text.toString()
-                cate_name = edtproductCategory.text.toString()
-                brand_id = edtproductBrandname.text.toString().toInt()
+                cate_name = edtproductCategory.selectedItem.toString()
+                val BrandName = arr.filter { it.brand_name==edtproductBrandname.selectedItem.toString()}.first().brand_id
+                brand_id = BrandName
+//                val I'd = arr.filter{it.name=selected}.id
+               // brand_id = edtproductBrandname.selectedItemId.toInt()
             }
         }
     }
@@ -95,26 +103,32 @@ class AddProductActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Simple_Response?>, t: Throwable) {
-//                TODO("Not yet implemented")
+                Toast.makeText(this@AddProductActivity, "Some Problem occur", Toast.LENGTH_SHORT).show()
             }
         })
     }
 
-    private suspend  fun fetchBrandName(){
-        Network_Service.networkInstance.getBrand().enqueue(object : Callback<List<Brand>?> {
-            override fun onResponse(call: Call<List<Brand>?>, response: Response<List<Brand>?>) {
-                if (response.isSuccessful)
-                {
-                    val brand = response.body()
+
+   private fun getAllBrandSpinner()
+   {
+       val a = Network_Service.networkInstance.getBrand()
+       a.enqueue(object : Callback<List<Brand>?> {
+           override fun onResponse(call: Call<List<Brand>?>, response: Response<List<Brand>?>) {
+
+               val b = response.body()!!
+               val are = b.map {
+                   it.brand_name
+               }
+               val adp = ArrayAdapter(this@AddProductActivity,R.layout.simple_spinner_brand_name,are)
+               binding.edtproductBrandname.adapter = adp
+           }
+
+           override fun onFailure(call: Call<List<Brand>?>, t: Throwable) {
+               Toast.makeText(this@AddProductActivity, "Some Problem occur", Toast.LENGTH_SHORT).show()
+           }
+       })
+   }
 
 
-                }
-            }
-
-            override fun onFailure(call: Call<List<Brand>?>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-        })
-    }
 }
 

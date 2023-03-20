@@ -66,45 +66,69 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/productDesc_container"
-        android:id="@+id/product_category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/background"
-        android:hint="Category Name"
-        android:layout_margin="10dp">
+        android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtproductCategory"
-            android:textColor="@color/black"
-            android:background="@drawable/background"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:orientation="horizontal">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Category Name : "
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"/>
 
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:id="@+id/edtproductCategory"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_below="@+id/product_category"
-        android:id="@+id/productBrand_Name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/background"
-        android:hint="Brand  Name : "
-        android:layout_margin="10dp">
+        </LinearLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtproduct_Brandname"
-            android:textColor="@color/black"
-            android:background="@drawable/background"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:orientation="horizontal">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Brand Name : "
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"/>
 
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:id="@+id/edtproduct_Brandname"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addMobiles"

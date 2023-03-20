@@ -3,12 +3,8 @@ package com.ashish.royalmobileadminapp.network
 import android.telecom.Call.Details
 import com.ashish.royalmobileadminapp.data.auth.Admin_Login_Request
 import com.ashish.royalmobileadminapp.data.auth.Admin_Register_Request
-import com.ashish.royalmobileadminapp.data.product.Accessories
-import com.ashish.royalmobileadminapp.data.product.ProductColor
-import com.ashish.royalmobileadminapp.data.product.Mobile
-import com.ashish.royalmobileadminapp.data.product.Product
+import com.ashish.royalmobileadminapp.data.product.*
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
-import com.example.data.model.Brand
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -24,6 +20,9 @@ interface NetworkCall_Interface
 
     @POST("brand/add")
     fun addbrand(@Body brandDetails : Brand) : Call<Simple_Response>
+
+    @POST("category/add")
+    fun addCategory(@Body categoryDetails: Category) : Call<Simple_Response>
 
     @Multipart
     @POST("profileImage/upload")
@@ -61,7 +60,7 @@ interface NetworkCall_Interface
     fun getAllAccessories(@Body getAllAccessoriesDetails: Accessories) : Call<Simple_Response>
 
     @GET("brand/getAll")
-    suspend fun getBrand() : Call<List<Brand>>
+    fun getBrand() : Call<List<Brand>>
 
 
 }

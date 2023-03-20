@@ -16,6 +16,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.ObservableField
 import com.ashish.royalmobileadminapp.activity.AddAdminActivity
+import com.ashish.royalmobileadminapp.activity.ForgetPasswordActivity
+import com.ashish.royalmobileadminapp.activity.LoginActivity
 import com.ashish.royalmobileadminapp.data.response.Image_Response
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
 import com.ashish.royalmobileadminapp.databinding.FragmentProfileBinding
@@ -67,6 +69,13 @@ class ProfileFragment : Fragment() {
              val intent = Intent(requireContext(),AddAdminActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnLogout.setOnClickListener {
+            val intent = Intent(requireContext(),ForgetPasswordActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
         return binding.root
     }
