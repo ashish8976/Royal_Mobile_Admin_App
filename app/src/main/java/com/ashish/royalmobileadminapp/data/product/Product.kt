@@ -4,7 +4,7 @@ data class Product(
     var product_id: Int? = null,
     var product_name: String? = null,
     var product_desc: String? = null,
-    var cate_name: String? = null,
+    var cate_id: Int? = null,
     var productColor: List<ProductColor>? = null,
     var brand_id: Int? = null,
     var Mobile: List<Mobile>? = null,

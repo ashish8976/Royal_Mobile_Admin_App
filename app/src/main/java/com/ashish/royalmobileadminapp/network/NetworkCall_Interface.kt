@@ -62,5 +62,7 @@ interface NetworkCall_Interface
     @GET("brand/getAll")
     fun getBrand() : Call<List<Brand>>
 
+    @GET("category/getAll")
+    fun getCategory() : Call<List<Category>>
 
 }

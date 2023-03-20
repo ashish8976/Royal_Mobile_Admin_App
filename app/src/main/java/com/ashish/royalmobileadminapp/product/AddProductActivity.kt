@@ -1,23 +1,16 @@
 package com.ashish.royalmobileadminapp.product
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.ashish.royalmobileadminapp.R
-import com.ashish.royalmobileadminapp.data.product.Brand
-import com.ashish.royalmobileadminapp.data.product.Mobile
-import com.ashish.royalmobileadminapp.data.product.Product
-import com.ashish.royalmobileadminapp.data.product.ProductColor
+import com.ashish.royalmobileadminapp.data.product.*
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
 import com.ashish.royalmobileadminapp.databinding.ActivityAddProductBinding
 import com.ashish.royalmobileadminapp.network.Network_Service
-import kotlinx.coroutines.selects.select
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,6 +19,7 @@ class AddProductActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityAddProductBinding
     val arr = mutableListOf<Brand>()
+    val category = mutableListOf<Category>()
     var mProduct = Product()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +29,8 @@ class AddProductActivity : AppCompatActivity() {
         Toast.makeText(this, "$mProduct", Toast.LENGTH_SHORT).show()
 
         getAllBrandSpinner()
+
+        getAllCategoryspinner()
 
         binding.addMobiles.setOnClickListener {
             val intent = Intent(this, AddMobileActivity::class.java)
@@ -52,17 +48,24 @@ class AddProductActivity : AppCompatActivity() {
             addProduct()
         }
     }
+
+
+
     private fun setupProduct() {
         mProduct.apply {
             binding.apply {
                 product_id = edtProductId.text.toString().toInt()
                 product_name = edtproductName.text.toString()
                 product_desc = edtProductDesc.text.toString()
-                cate_name = edtproductCategory.selectedItem.toString()
-                val BrandName = arr.filter { it.brand_name==edtproductBrandname.selectedItem.toString()}.first().brand_id
+                val CategoryName = category.filter {
+                    it.cate_name==edtproductCategory.selectedItem.toString()
+                }.first().cate_id
+                cate_id = CategoryName
+//                cate_name = edtproductCategory.selectedItem.toString()
+                val BrandName = arr.filter {
+                    it.brand_name==edtproductBrandname.selectedItem.toString()
+                }.first().brand_id
                 brand_id = BrandName
-//                val I'd = arr.filter{it.name=selected}.id
-               // brand_id = edtproductBrandname.selectedItemId.toInt()
             }
         }
     }
@@ -108,6 +111,26 @@ class AddProductActivity : AppCompatActivity() {
         })
     }
 
+    private fun getAllCategoryspinner() {
+            val t = Network_Service.networkInstance.getCategory()
+        t.enqueue(object : Callback<List<Category>?> {
+            override fun onResponse(
+                call: Call<List<Category>?>,
+                response: Response<List<Category>?>
+            ) {
+                val friend = response.body()!!
+                val rachna = friend.map {
+                    it.cate_name
+                }
+                val adp = ArrayAdapter(this@AddProductActivity,R.layout.simple_spinner_brand_name,rachna)
+                binding.edtproductCategory.adapter = adp
+            }
+
+            override fun onFailure(call: Call<List<Category>?>, t: Throwable) {
+                Toast.makeText(this@AddProductActivity,"Some Problem occur",Toast.LENGTH_LONG).show()
+            }
+        })
+    }
 
    private fun getAllBrandSpinner()
    {
@@ -128,6 +151,10 @@ class AddProductActivity : AppCompatActivity() {
            }
        })
    }
+
+
+
+
 
 
 }
