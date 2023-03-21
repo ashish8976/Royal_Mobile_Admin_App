@@ -5,6 +5,7 @@ import com.ashish.royalmobileadminapp.data.auth.Admin_Login_Request
 import com.ashish.royalmobileadminapp.data.auth.Admin_Register_Request
 import com.ashish.royalmobileadminapp.data.product.*
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
+import com.example.data.model.Admin
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -47,7 +48,6 @@ interface NetworkCall_Interface
     @GET("product/getAllMobile")
     fun getAllMobiles() : Call<List<Mobile>>
 
-
     @GET("product/getAllAccessories")
     fun getAllAccessories() : Call<List<Accessories>>
 
@@ -56,5 +56,8 @@ interface NetworkCall_Interface
 
     @GET("category/getAll")
     fun getCategory() : Call<List<Category>>
+
+    @GET("admin/get")
+    fun getOneAdminDetails(@Query("email")email:String) : Call<Admin>
 
 }
