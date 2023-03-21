@@ -39,25 +39,17 @@ interface NetworkCall_Interface
     @POST("product/delete")
     fun  delete_product(@Body productDeleteDetails: Product) : Call<Simple_Response>
 
-    @POST("")
-    fun add_mobile(@Body mobileDetails: Mobile) : Call<Simple_Response>
-
-    @POST("")
-    fun add_accessories(@Body accessoriesDetails: Accessories) : Call<Simple_Response>
-
-    @POST("")
-    fun add_color(@Body productColorDetails: ProductColor) : Call<Simple_Response>
 
 
     @GET("product/getAllProduct")
-    fun getAllProduct(@Body getAllProductDetails: Product) : Call<Simple_Response>
+    fun getAllProduct() : Call<List<Product>>
 
     @GET("product/getAllMobile")
-    fun getAllMobiles(@Body getAllMobilesDetails: Mobile) : Call<Simple_Response>
+    fun getAllMobiles() : Call<List<Mobile>>
 
 
     @GET("product/getAllAccessories")
-    fun getAllAccessories(@Body getAllAccessoriesDetails: Accessories) : Call<Simple_Response>
+    fun getAllAccessories() : Call<List<Accessories>>
 
     @GET("brand/getAll")
     fun getBrand() : Call<List<Brand>>

@@ -96,7 +96,9 @@ class AddMobileActivity : AppCompatActivity() {
         }
 
         if (isStoragePermissionGranted()) {
-            ActivityCompat.requestPermissions(this, PERMISSION_STORAGE,
+            ActivityCompat.requestPermissions(
+                this,
+                PERMISSION_STORAGE,
                 REQUST_EXTERNAL_STORAGE)
         }
 

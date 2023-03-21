@@ -18,8 +18,8 @@ import retrofit2.Response
 class AddProductActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityAddProductBinding
-    val arr = mutableListOf<Brand>()
-    val category = mutableListOf<Category>()
+    var arr = mutableListOf<Brand>()
+    var abc = mutableListOf<Category>()
     var mProduct = Product()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,9 +28,8 @@ class AddProductActivity : AppCompatActivity() {
         //intent.getSerializableExtra("product") as Product
         Toast.makeText(this, "$mProduct", Toast.LENGTH_SHORT).show()
 
-        getAllBrandSpinner()
-
         getAllCategoryspinner()
+        getAllBrandSpinner()
 
         binding.addMobiles.setOnClickListener {
             val intent = Intent(this, AddMobileActivity::class.java)
@@ -54,18 +53,30 @@ class AddProductActivity : AppCompatActivity() {
     private fun setupProduct() {
         mProduct.apply {
             binding.apply {
-                product_id = edtProductId.text.toString().toInt()
+                if(!edtProductId.text.toString().isNullOrEmpty())
+                {
+                    product_id = edtProductId.text.toString().toInt()
+                    Toast.makeText(this@AddProductActivity, "$mProduct", Toast.LENGTH_SHORT).show()
+                }
+
                 product_name = edtproductName.text.toString()
                 product_desc = edtProductDesc.text.toString()
-                val CategoryName = category.filter {
+                val CategoryName = abc.filter {
                     it.cate_name==edtproductCategory.selectedItem.toString()
-                }.first().cate_id
-                cate_id = CategoryName
+                }
+                if (CategoryName.isNotEmpty())
+                {
+                    cate_id = CategoryName.first().cate_id
+                }
 //                cate_name = edtproductCategory.selectedItem.toString()
                 val BrandName = arr.filter {
                     it.brand_name==edtproductBrandname.selectedItem.toString()
-                }.first().brand_id
-                brand_id = BrandName
+                }
+                if (BrandName.isNotEmpty())
+                {
+                    brand_id = BrandName.first().brand_id
+                }
+
             }
         }
     }
@@ -79,7 +90,9 @@ class AddProductActivity : AppCompatActivity() {
 //                    "${data?.getSerializableExtra("mobile")}",
 //                    Toast.LENGTH_LONG
 //                ).show()
-                setupProduct()
+//                setupProduct()
+                getAllCategoryspinner()
+                getAllBrandSpinner()
                 mProduct.Mobile = listOf(data?.getSerializableExtra("mobile") as Mobile)
                 mProduct.productColor = listOf(data.getSerializableExtra("colors") as ProductColor)
                 Toast.makeText(this, "$mProduct", Toast.LENGTH_SHORT).show()
@@ -101,7 +114,8 @@ class AddProductActivity : AppCompatActivity() {
                 response: Response<Simple_Response?>
             ) {
                 response.body()?.let {
-                    Toast.makeText(this@AddProductActivity,it.message, Toast.LENGTH_SHORT).show()
+                    binding.errorText.text = it.message.toString()
+                   // Toast.makeText(this@AddProductActivity,it.message, Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -118,12 +132,13 @@ class AddProductActivity : AppCompatActivity() {
                 call: Call<List<Category>?>,
                 response: Response<List<Category>?>
             ) {
-                val friend = response.body()!!
-                val rachna = friend.map {
+                abc = response.body()!!.toMutableList()
+                val rachna = abc.map {
                     it.cate_name
                 }
                 val adp = ArrayAdapter(this@AddProductActivity,R.layout.simple_spinner_brand_name,rachna)
                 binding.edtproductCategory.adapter = adp
+                setupProduct()
             }
 
             override fun onFailure(call: Call<List<Category>?>, t: Throwable) {
@@ -138,12 +153,13 @@ class AddProductActivity : AppCompatActivity() {
        a.enqueue(object : Callback<List<Brand>?> {
            override fun onResponse(call: Call<List<Brand>?>, response: Response<List<Brand>?>) {
 
-               val b = response.body()!!
-               val are = b.map {
+               arr = response.body()!!.toMutableList()
+               val are = arr.map {
                    it.brand_name
                }
                val adp = ArrayAdapter(this@AddProductActivity,R.layout.simple_spinner_brand_name,are)
                binding.edtproductBrandname.adapter = adp
+               setupProduct()
            }
 
            override fun onFailure(call: Call<List<Brand>?>, t: Throwable) {

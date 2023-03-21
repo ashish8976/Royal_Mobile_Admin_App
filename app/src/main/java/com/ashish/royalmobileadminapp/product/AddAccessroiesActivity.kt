@@ -24,6 +24,7 @@ import com.ashish.royalmobileadminapp.data.product.ProductColor
 import com.ashish.royalmobileadminapp.databinding.ActivityAddAccessroiesBinding
 import com.ashish.royalmobileadminapp.utils.Constants
 import com.ashish.royalmobileadminapp.utils.Constants.PICK_IMAGE_REQUEST
+import com.ashish.royalmobileadminapp.utils.Constants.REQUEST_CODE_IMAGE
 import com.ashish.royalmobileadminapp.utils.ImageUploading
 import com.bumptech.glide.Glide
 import retrofit2.Retrofit
@@ -32,8 +33,6 @@ class AddAccessroiesActivity : AppCompatActivity() {
 
     lateinit var binding : ActivityAddAccessroiesBinding
     private lateinit var imageView: ImageView
-    private lateinit var retrofit: Retrofit
-    private lateinit var selectColor : ColorObject
 
     var imageUploading = ImageUploading(this)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +46,7 @@ class AddAccessroiesActivity : AppCompatActivity() {
         imageView = findViewById(R.id.accessImages)
 
         binding.accessImages.setOnClickListener {
+          //  requestGallaryPermission()
             selectImage()
         }
 
@@ -152,7 +152,28 @@ class AddAccessroiesActivity : AppCompatActivity() {
                 sendProductImage(createImageMultipart())
             }
         }
+    }
 
+    private fun requestGallaryPermission(){
+        if (ContextCompat.checkSelfPermission(this,Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(
+                this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), REQUEST_CODE_IMAGE
+            )
+        }
+        else
+        {
+            openGallary()
+        }
+    }
+
+    private fun openGallary() {
+            val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        startActivityForResult(intent, REQUEST_CODE_IMAGE)
     }
 }
+
+
+
 
