@@ -44,6 +44,7 @@ class ImageUploading(private val activity : Activity) {
             return@with part
         }
     }
+
      fun sendProductImage(part: MultipartBody.Part){
         try {
 //            val response = uploadProductImage(part,languageId)

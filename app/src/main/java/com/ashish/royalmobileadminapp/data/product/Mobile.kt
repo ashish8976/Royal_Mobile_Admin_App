@@ -5,5 +5,6 @@ data class Mobile(
     var product_id : Int,
     val ram : String,
     val storage : String,
-    val price : Float
+    val price : Float,
+    val quentity : Int
 ) : java.io.Serializable

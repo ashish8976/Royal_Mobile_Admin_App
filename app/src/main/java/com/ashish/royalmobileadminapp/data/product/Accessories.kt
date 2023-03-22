@@ -4,5 +4,6 @@ data class Accessories(
     val access_id : Int,
     val product_id : Int,
     val specification : String,
-    val price : Float
+    val price : Float,
+    val quentity : Int
 ):java.io.Serializable
