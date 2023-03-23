@@ -9,6 +9,7 @@ import com.example.data.model.Admin
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
+import java.util.PropertyPermission
 
 interface NetworkCall_Interface
 {
@@ -57,7 +58,19 @@ interface NetworkCall_Interface
     @GET("category/getAll")
     fun getCategory() : Call<List<Category>>
 
+    @GET("category/get-category-id")
+    fun getCategoryById(@Query("cate_id") id: Int): Call<Category>
+
     @GET("admin/get")
     fun getOneAdminDetails(@Query("email")email:String) : Call<Admin>
+
+    @POST("product/delete")
+    fun deleteProduct(@Query("product_id")id: Int):Call<Simple_Response>
+
+    @GET("product/categoryId")
+    fun getProductByCategoryId(@Query("cate_id")id : Int):Call<List<Product>>
+
+//    @POST("cart/delete")
+//    fun deleteCart(@Query("cart_id") id : Int) : Call<Simple_Response>
 
 }

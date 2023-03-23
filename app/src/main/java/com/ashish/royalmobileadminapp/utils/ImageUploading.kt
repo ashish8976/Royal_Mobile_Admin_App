@@ -11,6 +11,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.ashish.royalmobileadminapp.URL
 import com.ashish.royalmobileadminapp.data.response.Image_Response
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
 import com.ashish.royalmobileadminapp.network.Network_Service
@@ -76,14 +77,16 @@ class ImageUploading(private val activity : Activity) {
         }
     }
 
-    suspend fun sendProfileImage(part: MultipartBody.Part){
-        try {
-     //       val response = repository.uploadProfileImage(part)
-       //     _serverResponse.postValue(response)
-         //   _imageUploadResponse.postValue(response)
-        }catch (e : Exception){
-           // println("$e ${serverResponse.value?.message}")
-        }
-    }
+//     fun sendProfileImage(part: MultipartBody.Part){
+//        try {
+//     //       val response = repository.uploadProfileImage(part)
+//       //     _serverResponse.postValue(response)
+//         //   _imageUploadResponse.postValue(response)
+//        }catch (e : Exception){
+//           // println("$e ${serverResponse.value?.message}")
+//        }
+//    }
+
+
 
 }

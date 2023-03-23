@@ -7,8 +7,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/product_images"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="product_name"
-            android:textSize="15sp"
+            android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/product_images" />
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="product_description"
-            android:textSize="15sp"
+            android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/product_name" />
@@ -52,10 +52,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Variant 1"
-            android:textSize="15sp"
+            android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/product_desc" />
+
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/product_variant2"
@@ -63,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Variant 2"
-            android:textSize="15sp"
+            android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/product_variant1" />
@@ -74,12 +76,13 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Variant 3"
-            android:textSize="15sp"
+            android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/product_variant2" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:visibility="gone"
             android:id="@+id/product_variant4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,6 +94,7 @@
             app:layout_constraintTop_toBottomOf="@+id/product_variant3" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:visibility="gone"
             android:id="@+id/product_variant5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -102,6 +106,7 @@
             app:layout_constraintTop_toBottomOf="@+id/product_variant4" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:visibility="gone"
             android:id="@+id/product_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -116,19 +121,7 @@
     </LinearLayout>
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/updateProduct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/loginbackground"
-        android:padding="15dp"
-        android:text="Update Product"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
 
 
 
