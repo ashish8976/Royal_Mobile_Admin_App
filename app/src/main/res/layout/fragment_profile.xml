@@ -22,7 +22,6 @@
 
 
                 </LinearLayout>
-
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/adminAccountImage"
                     android:layout_width="100dp"
@@ -34,7 +33,8 @@
                     app:layout_constraintBottom_toBottomOf="@+id/linearLayout6"
                     app:layout_constraintEnd_toEndOf="@+id/linearLayout6"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/linearLayout6" />
+                    app:layout_constraintTop_toTopOf="@+id/linearLayout6"
+                    tools:ignore="MissingClass" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout7"
