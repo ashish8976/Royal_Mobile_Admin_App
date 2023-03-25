@@ -1,6 +1,7 @@
 package com.ashish.royalmobileadminapp.utils
 
 import android.Manifest
+import com.ashish.royalmobileadminapp.URL
 
 
 object Constants {
@@ -17,4 +18,10 @@ object Constants {
         Manifest.permission.READ_EXTERNAL_STORAGE,
         Manifest.permission.WRITE_EXTERNAL_STORAGE
     )
+
+    fun urlMaker(imageurl :String): String {
+        val fileName = imageurl.substringAfter("http://localhost:8007/storage/images/")
+        return URL.IMAGE_PATH+fileName
+        //http://localhost:8007/storage/images/image1679465705866.jpg
+    }
 }

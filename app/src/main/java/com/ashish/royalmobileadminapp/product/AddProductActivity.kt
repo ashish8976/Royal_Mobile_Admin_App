@@ -48,32 +48,26 @@ class AddProductActivity : AppCompatActivity() {
         }
     }
 
-
-
     private fun setupProduct() {
         mProduct.apply {
             binding.apply {
-                if(!edtProductId.text.toString().isNullOrEmpty())
-                {
+                if(!edtProductId.text.toString().isNullOrEmpty()) {
                     product_id = edtProductId.text.toString().toInt()
                     Toast.makeText(this@AddProductActivity, "$mProduct", Toast.LENGTH_SHORT).show()
                 }
-
                 product_name = edtproductName.text.toString()
                 product_desc = edtProductDesc.text.toString()
                 val CategoryName = abc.filter {
                     it.cate_name==edtproductCategory.selectedItem.toString()
                 }
-                if (CategoryName.isNotEmpty())
-                {
+                if (CategoryName.isNotEmpty()) {
                     cate_id = CategoryName.first().cate_id
                 }
 //                cate_name = edtproductCategory.selectedItem.toString()
                 val BrandName = arr.filter {
                     it.brand_name==edtproductBrandname.selectedItem.toString()
                 }
-                if (BrandName.isNotEmpty())
-                {
+                if (BrandName.isNotEmpty()) {
                     brand_id = BrandName.first().brand_id
                 }
 
@@ -118,7 +112,6 @@ class AddProductActivity : AppCompatActivity() {
                    // Toast.makeText(this@AddProductActivity,it.message, Toast.LENGTH_SHORT).show()
                 }
             }
-
             override fun onFailure(call: Call<Simple_Response?>, t: Throwable) {
                 Toast.makeText(this@AddProductActivity, "Some Problem occur", Toast.LENGTH_SHORT).show()
             }
@@ -167,11 +160,6 @@ class AddProductActivity : AppCompatActivity() {
            }
        })
    }
-
-
-
-
-
 
 }
 

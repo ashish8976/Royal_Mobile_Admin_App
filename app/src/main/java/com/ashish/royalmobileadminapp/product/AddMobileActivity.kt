@@ -82,7 +82,8 @@ class AddMobileActivity : AppCompatActivity() {
                         product_id = p.toInt(),
                         ram = edtMobileRam.text.toString(),
                         storage = edtMobileStorage.text.toString(),
-                        price = edtMobilePrice.text.toString().toFloat()
+                        price = edtMobilePrice.text.toString().toFloat(),
+                        quentity = edtMobileQuentity.text.toString().toInt()
                     )
                     i.putExtra("mobile", m)
                     i.putExtra("colors",ProductColor(1,colorSpinner.selectedItem.toString(),imageUploading.imageUrl))
@@ -91,7 +92,6 @@ class AddMobileActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(this@AddMobileActivity, "Pid is null", Toast.LENGTH_LONG).show()
                 }
-
             }
         }
 

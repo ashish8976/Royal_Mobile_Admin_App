@@ -62,7 +62,6 @@ class ProfileFragment : Fragment() {
                 Toast.makeText(requireContext(),"Some Problem ${t.message}",Toast.LENGTH_LONG).show()
             }
         }) }
-
     }
 
     private fun isLoggedIn(): String? {

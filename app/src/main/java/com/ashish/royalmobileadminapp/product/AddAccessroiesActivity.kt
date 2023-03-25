@@ -59,7 +59,8 @@ class AddAccessroiesActivity : AppCompatActivity() {
                         access_id = 0,
                         product_id = p.toInt(),
                         specification = edtAccessSpecification.text.toString(),
-                        price = edtAccessPrice.text.toString().toFloat()
+                        price = edtAccessPrice.text.toString().toFloat(),
+                        quentity = edtAccessQuentity.text.toString().toInt()
                     )
                     i.putExtra("access",a)
                     i.putExtra("color",ProductColor(1,
