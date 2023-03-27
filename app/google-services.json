@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "939709770453",
+    "project_id": "royal-mobile-44526",
+    "storage_bucket": "royal-mobile-44526.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939709770453:android:846a3c822ad55234efd05c",
+        "android_client_info": {
+          "package_name": "com.ashish.royalmobileadminapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939709770453-4t4qhjhn2sqlbq2qmkd4ajpdfe059sjg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoT9993zTNjOLJY2-KbuP7wun3HJb82Cs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "939709770453-4t4qhjhn2sqlbq2qmkd4ajpdfe059sjg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939709770453:android:d2d1a6a9d96c3c58efd05c",
+        "android_client_info": {
+          "package_name": "com.kunalashish.royalmobilec"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939709770453-4t4qhjhn2sqlbq2qmkd4ajpdfe059sjg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoT9993zTNjOLJY2-KbuP7wun3HJb82Cs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "939709770453-4t4qhjhn2sqlbq2qmkd4ajpdfe059sjg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
