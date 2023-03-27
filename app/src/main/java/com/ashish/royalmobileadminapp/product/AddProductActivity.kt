@@ -1,5 +1,6 @@
 package com.ashish.royalmobileadminapp.product
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -15,9 +16,11 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
 class AddProductActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityAddProductBinding
+
     var arr = mutableListOf<Brand>()
     var abc = mutableListOf<Category>()
     var mProduct = Product()
@@ -30,6 +33,7 @@ class AddProductActivity : AppCompatActivity() {
 
         getAllCategoryspinner()
         getAllBrandSpinner()
+      //  vm = ViewModelProvider(this).get(AddProductActivityViewModel::class.java)
 
         binding.addMobiles.setOnClickListener {
             val intent = Intent(this, AddMobileActivity::class.java)
@@ -47,7 +51,6 @@ class AddProductActivity : AppCompatActivity() {
             addProduct()
         }
     }
-
     private fun setupProduct() {
         mProduct.apply {
             binding.apply {
@@ -70,26 +73,26 @@ class AddProductActivity : AppCompatActivity() {
                 if (BrandName.isNotEmpty()) {
                     brand_id = BrandName.first().brand_id
                 }
-
             }
         }
+
+        Toast.makeText(this@AddProductActivity, "${mProduct}", Toast.LENGTH_LONG).show()
+
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 2) {
             if (resultCode == Activity.RESULT_OK) {
-//                Toast.makeText(
-//                    this@AddProductActivity,
-//                    "${data?.getSerializableExtra("mobile")}",
-//                    Toast.LENGTH_LONG
-//                ).show()
-//                setupProduct()
+
                 getAllCategoryspinner()
                 getAllBrandSpinner()
-                mProduct.Mobile = listOf(data?.getSerializableExtra("mobile") as Mobile)
-                mProduct.productColor = listOf(data.getSerializableExtra("colors") as ProductColor)
-                Toast.makeText(this, "$mProduct", Toast.LENGTH_SHORT).show()
+                mProduct.Mobile = mutableListOf(data?.getSerializableExtra("mobile") as Mobile)
+
+                mProduct.productColor = mutableListOf(data.getSerializableExtra("colors") as ProductColor)
+
+                    Toast.makeText(this, "$mProduct", Toast.LENGTH_SHORT).show()
             }else{
                 Toast.makeText(
                     this@AddProductActivity,
@@ -116,6 +119,7 @@ class AddProductActivity : AppCompatActivity() {
                 Toast.makeText(this@AddProductActivity, "Some Problem occur", Toast.LENGTH_SHORT).show()
             }
         })
+
     }
 
     private fun getAllCategoryspinner() {

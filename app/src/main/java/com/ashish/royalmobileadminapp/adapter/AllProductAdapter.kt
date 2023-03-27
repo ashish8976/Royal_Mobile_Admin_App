@@ -6,8 +6,6 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.ashish.royalmobileadminapp.data.product.Category
@@ -22,7 +20,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AllProductAdapter(val context: Context,val itemList : List<Product>, val db : NetworkCall_Interface, val vm : ProductViewModel):
+class AllProductAdapter(
+    val context: Context,val itemList : List<Product>,
+    val db : NetworkCall_Interface, val vm : ProductViewModel):
     RecyclerView.Adapter<AllProductAdapter.AllProductViewHolder>() {
     class AllProductViewHolder(val binding: HorizontalScrollItemLayoutBinding):
     ViewHolder(binding.root){
@@ -66,6 +66,7 @@ class AllProductAdapter(val context: Context,val itemList : List<Product>, val d
                 val ch = Intent(
                     context,ProductActivityDetails::class.java
                 )
+              //  ch.putExtra("product",tanu)
                 ch.putExtra("product",tanu)
                 context.startActivity(ch)
             }

@@ -24,7 +24,4 @@
         android:foreground="?attr/selectableItemBackground"
         app:menu="@menu/home_menu"/>
 
-
-
-
 </LinearLayout>

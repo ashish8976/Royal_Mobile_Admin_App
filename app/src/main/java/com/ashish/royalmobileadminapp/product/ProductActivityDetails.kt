@@ -29,14 +29,11 @@ class ProductActivityDetails : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences(Constants.user_pref,Context.MODE_PRIVATE)
 
         setupData()
-        setupClickListener()
+       // setupClickListener()
 
         setContentView(binding.root)
     }
 
-    private fun setupClickListener() {
-
-    }
 
     private fun setupData() {
         if (product != null){

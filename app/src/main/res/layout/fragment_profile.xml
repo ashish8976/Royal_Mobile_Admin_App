@@ -86,23 +86,82 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-       <RelativeLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
+        <FrameLayout
+            android:id="@+id/frame1"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-               <androidx.appcompat.widget.AppCompatButton
-                   android:layout_centerHorizontal="true"
-                   android:id="@+id/AddAdminButton"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginTop="10dp"
-                   android:background="@drawable/productbackground"
-                   android:padding="5dp"
-                   android:text="Add Admin"
-                   android:textColor="@color/black" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="4dp">
 
-       </RelativeLayout>
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvUserName1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add Admin"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginHorizontal="16dp"
+                            android:textSize="18sp"
+                            />
 
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/AddAdminButton"
+                            android:layout_width="28dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/ic_arrow" />
+                </androidx.cardview.widget.CardView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frame2"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="4dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvUserName2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Customer Details"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginHorizontal="16dp"
+                            android:textSize="18sp"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/ShowAllCustomer"
+                            android:layout_width="28dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/ic_arrow" />
+                </androidx.cardview.widget.CardView>
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/productbackground"
+            android:layout_margin="120dp"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="Logout">
+
+        </androidx.appcompat.widget.AppCompatButton>
 
 </LinearLayout>
 
