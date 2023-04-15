@@ -33,13 +33,11 @@ class ProductActivityDetails : AppCompatActivity() {
 
         setContentView(binding.root)
     }
-
-
     private fun setupData() {
         if (product != null){
             with(binding){
-                productName.text = product!!.product_name
-                productDesc.text = product!!.product_desc
+                productName.text = "Prodcut Name : "+ product!!.product_name
+                productDesc.text = "Product Description : "+product!!.product_desc
                 Glide.with(this@ProductActivityDetails)
                     .load(product?.productColor?.first()?.product_image?.let{
                             Constants.urlMaker(
@@ -47,9 +45,9 @@ class ProductActivityDetails : AppCompatActivity() {
                             )
 
                     }).into(binding.productImages)
-                productVariant1.text = product?.Mobile?.first()?.ram
-                productVariant2.text = product?.Mobile?.first()?.storage
-                productVariant3.text = product?.Mobile?.first()?.price.toString()
+                productVariant1.text = "Ram : " + product?.Mobile?.first()?.ram
+                productVariant2.text = "Storage : "+product?.Mobile?.first()?.storage
+                productVariant3.text = "Price : "+product?.Mobile?.first()?.price.toString()
 //                if (product?.cate_id?.toString() == "Mobile"){
 //                        productVariant1.text = product?.Mobile?.first()?.price.toString()
 //                        productVariant2.text = product?.productColor?.first()?.color_name

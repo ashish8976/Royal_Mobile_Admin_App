@@ -39,7 +39,7 @@ class AllCustomerAdapter(
         val ssc = itemList[position]
         with(holder){
             customerEmail.text = "Customer Email : "+ssc.email
-            customerAddress.text = "Customer Address"+ssc.cust_Address
+            customerAddress.text = "Customer Address : "+ssc.cust_Address
             customerName.text = "Customer Name : "+ssc.first_name
 
             customerCard.setOnClickListener {
@@ -49,9 +49,6 @@ class AllCustomerAdapter(
                 ch.putExtra("customer",ssc)
                 context.startActivity(ch)
             }
-
-
-
 
         }
     }

@@ -69,6 +69,10 @@
             android:exported="false" />
         <activity
             android:name=".activity.LoginActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -76,9 +80,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.MainActivity"
-            android:exported="false" />
     </application>
 
 </manifest>
