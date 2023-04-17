@@ -12,4 +12,4 @@ data class Customer(
      val cust_Address : String,
      val delivery_address : String,
      val pincode : Int
- )
+ ):java.io.Serializable

@@ -61,7 +61,7 @@ class ImageUploading(private val activity : Activity) {
                              Toast.makeText(activity, it.message, Toast.LENGTH_SHORT).show()
                              imageUrl = it.message
                          }
-
+                         Toast.makeText(activity, it.message, Toast.LENGTH_SHORT).show()
                      }
               
                 }
