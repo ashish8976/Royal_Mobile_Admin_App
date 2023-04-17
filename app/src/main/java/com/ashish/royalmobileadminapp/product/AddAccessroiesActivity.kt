@@ -88,6 +88,12 @@ class AddAccessroiesActivity : AppCompatActivity() {
             "Red" to "#FF0000",
             "Green" to "#00FF00",
             "Blue" to "#0000FF",
+            "Orange" to "#e65100",
+            "Cyan" to "#00e5ff",
+            "Lime" to "#c6ff00",
+            "Black" to "#212121",
+            "White" to "#fafafa",
+            "Silver" to "#9e9e9e"
         )
 
         val colorAdapter = ArrayAdapter(
