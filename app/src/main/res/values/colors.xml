@@ -19,6 +19,9 @@
     <color name="text_normal_color">#374457</color>
 
     <color name="authButtonColor">#3253e0</color>
+    <color name="dark_gray">#FFBAB7B7</color>
+    <color name="green">#A36F6F</color>
+    <color name="colorAccent">#F30707</color>
 
 </resources>
 
