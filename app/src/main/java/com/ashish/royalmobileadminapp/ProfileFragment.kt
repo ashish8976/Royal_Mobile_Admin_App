@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.ashish.royalmobileadminapp.activity.AddAdminActivity
+import com.ashish.royalmobileadminapp.activity.AllCustomerActivity
 import com.ashish.royalmobileadminapp.activity.MainActivity
 import com.ashish.royalmobileadminapp.databinding.FragmentProfileBinding
 import com.ashish.royalmobileadminapp.network.Network_Service
@@ -44,6 +45,11 @@ class ProfileFragment : Fragment() {
 
         binding.AddAdminButton.setOnClickListener {
              val intent = Intent(requireContext(),AddAdminActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.ShowAllCustomer.setOnClickListener {
+            val intent = Intent(requireContext(),AllCustomerActivity::class.java)
             startActivity(intent)
         }
 

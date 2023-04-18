@@ -1,18 +1,15 @@
 package com.ashish.royalmobileadminapp.product
 
-import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.ashish.royalmobileadminapp.R
 import com.ashish.royalmobileadminapp.adapter.AllProductAdapter
 import com.ashish.royalmobileadminapp.data.product.Product
 import com.ashish.royalmobileadminapp.databinding.ActivityAllProductBinding
-import com.ashish.royalmobileadminapp.databinding.FragmentHomeBinding
 import com.ashish.royalmobileadminapp.network.Network_Service
 import com.ashish.royalmobileadminapp.viewModel.ProductViewModel
-import com.surajmanshal.mannsignadmin.network.NetworkService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,7 +21,7 @@ class AllProductActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAllProductBinding.inflate(layoutInflater)
-        vm = ViewModelProvider(this).get(ProductViewModel::class.java)
+        vm = ViewModelProvider(this)[ProductViewModel::class.java]
         setContentView(binding.root)
         loadProducts()
 

@@ -6,6 +6,7 @@ import com.ashish.royalmobileadminapp.data.auth.Admin_Register_Request
 import com.ashish.royalmobileadminapp.data.product.*
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
 import com.example.data.model.Admin
+import com.example.data.model.Customer
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -43,8 +44,7 @@ interface NetworkCall_Interface
 
 
 
-    @GET("product/getAllProduct")
-    fun getAllProduct() : Call<List<Product>>
+
 
     @GET("product/getAllMobile")
     fun getAllMobiles() : Call<List<Mobile>>
@@ -55,8 +55,7 @@ interface NetworkCall_Interface
     @GET("brand/getAll")
     fun getBrand() : Call<List<Brand>>
 
-    @GET("category/getAll")
-    fun getCategory() : Call<List<Category>>
+
 
     @GET("category/get-category-id")
     fun getCategoryById(@Query("cate_id") id: Int): Call<Category>
@@ -70,7 +69,21 @@ interface NetworkCall_Interface
     @GET("product/categoryId")
     fun getProductByCategoryId(@Query("cate_id")id : Int):Call<List<Product>>
 
-//    @POST("cart/delete")
-//    fun deleteCart(@Query("cart_id") id : Int) : Call<Simple_Response>
+
+    @POST("order/get_email_order")
+    fun getOrderByEmail(@Query("email") email: String) : Call<Order>
+
+    @GET("category/getAll")
+    fun getCategory() : Call<List<Category>>
+
+    @GET("product/getAllProduct")
+    fun getAllProduct() : Call<List<Product>>
+    @GET("order/getAll")
+    fun getAllOrder() : Call<List<Order>>
+
+    @GET("customer/getAll")
+    fun getAllCustomer() : Call<List<Customer>>
+
+
 
 }

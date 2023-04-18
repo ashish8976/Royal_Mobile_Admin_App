@@ -56,7 +56,7 @@ class AddAccessroiesActivity : AppCompatActivity() {
                 if (!p.isNullOrEmpty())
                 {
                     val a = Accessories(
-                        access_id = 0,
+                        access_id = edtAccessId.text.toString().toInt(),
                         product_id = p.toInt(),
                         specification = edtAccessSpecification.text.toString(),
                         price = edtAccessPrice.text.toString().toFloat(),
@@ -88,6 +88,12 @@ class AddAccessroiesActivity : AppCompatActivity() {
             "Red" to "#FF0000",
             "Green" to "#00FF00",
             "Blue" to "#0000FF",
+            "Orange" to "#e65100",
+            "Cyan" to "#00e5ff",
+            "Lime" to "#c6ff00",
+            "Black" to "#212121",
+            "White" to "#fafafa",
+            "Silver" to "#9e9e9e"
         )
 
         val colorAdapter = ArrayAdapter(
@@ -144,7 +150,7 @@ class AddAccessroiesActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == PICK_IMAGE_REQUEST && requestCode == RESULT_OK && data != null && data.data != null)
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.data != null)
         {
             Glide.with(this).load(data.data).into(imageView)
 
@@ -152,6 +158,8 @@ class AddAccessroiesActivity : AppCompatActivity() {
                 imageUri = data.data
                 sendProductImage(createImageMultipart())
             }
+        }else{
+            Toast.makeText(this, "No Data", Toast.LENGTH_SHORT).show()
         }
     }
 
