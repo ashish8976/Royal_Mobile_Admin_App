@@ -80,7 +80,7 @@ class AddProductActivity : AppCompatActivity() {
                     it.brand_name==edtproductBrandname.selectedItem.toString()
                 }
                 if (BrandName.isNotEmpty()) {
-                    brand_id = BrandName.first().brand_id
+                   // brand_id = BrandName.first().brand_id
                 }
             }
         }
@@ -113,7 +113,7 @@ class AddProductActivity : AppCompatActivity() {
             }else{
                 Toast.makeText(
                     this@AddProductActivity,
-                    "hii",
+                    "Please Enter Data",
                     Toast.LENGTH_LONG
                 ).show()
             }

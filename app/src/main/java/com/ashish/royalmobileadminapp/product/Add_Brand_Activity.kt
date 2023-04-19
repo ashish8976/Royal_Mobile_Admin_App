@@ -1,8 +1,10 @@
 package com.ashish.royalmobileadminapp.product
 
+import android.app.Dialog
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import com.ashish.royalmobileadminapp.R
 import com.ashish.royalmobileadminapp.data.product.Brand
@@ -37,7 +39,9 @@ class Add_Brand_Activity : AppCompatActivity() {
        }
     }
 
-    private fun addBrandFunction() {
+
+
+  private fun addBrandFunction() {
         val brand_id = binding.edtBrandId.text.toString().toInt()
         val brand_name = binding.edtBrandName.text.toString()
 
@@ -45,7 +49,7 @@ class Add_Brand_Activity : AppCompatActivity() {
 
         val sharedPreferences = getSharedPreferences(brand,Context.MODE_PRIVATE)
 
-        val r = data.addbrand(Brand(brand_id = brand_id, brand_name = brand_name))
+        val r = data.addbrand(Brand(brand_name = brand_name))
 
         r.enqueue(object : Callback<Simple_Response?> {
             override fun onResponse(

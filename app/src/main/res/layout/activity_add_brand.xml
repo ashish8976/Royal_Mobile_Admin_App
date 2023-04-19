@@ -10,7 +10,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_margin="20dp"
-        android:id="@+id/BrandId"
+        android:id="@+id/brandId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background"
@@ -55,14 +55,12 @@
         android:textColor="@color/black"
         android:background="@drawable/productbackground"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:textStyle="bold"
-        android:textColor="#EC080F"
-        android:textSize="20dp"
-        android:id="@+id/error_msg"/>
-
+        <TextView
+            android:id="@+id/errorMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_margin="10dp"
+            />
 
 </LinearLayout>
