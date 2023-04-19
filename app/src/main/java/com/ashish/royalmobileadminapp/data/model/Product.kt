@@ -9,5 +9,4 @@ data class Product(
     val brand_id: Int,
     var Mobile: List<Mobile>? = null,
     var Accessories: List<Accessories>? = null
-
 )

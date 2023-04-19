@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8D3D3"
+    tools:context=".AdminProfileFragment">
+
+    <ImageView
+        android:id="@+id/adminAccountImage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/baseline_account_circle_24"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:focusable="true"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/uploadImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/adminAccountImage"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#094AF1"
+        android:padding="10dp"
+        android:text="Upload Image"
+        android:textColor="#0E0E0D"
+        android:textSize="14sp"
+        tools:ignore="TextContrastCheck" />
+
+
+
+
+    <LinearLayout
+        android:id="@+id/admin_profile"
+        android:layout_below="@+id/uploadImage"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content">
+
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edEmail"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:background="@drawable/textview_background"
+            android:padding="20dp"/>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:text="Logout"
+        android:layout_marginHorizontal="16dp"
+        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textSize="20sp"/>
+</RelativeLayout>

@@ -27,27 +27,28 @@
                 android:fontFamily="@font/satoshi_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"/>
+                android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/txtOrderDate"
                 android:layout_width="wrap_content"
                 android:fontFamily="@font/satoshi_medium"
                 android:layout_height="wrap_content"
-                android:textSize="10sp"
+                android:textSize="18sp"
                 android:textColor="@color/text_normal_color"
                 android:text="Order Date"/>
 
             <TextView
                 android:id="@+id/txtOrderEmailId"
-                android:textSize="10sp"
+                android:textSize="15sp"
                 android:fontFamily="@font/satoshi_medium"
                 android:textColor="@color/text_normal_color"
-                android:text="surajsinhrathod007@gmail.com"
+                android:text="ashishrajput8156@gmail.com"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_marginRight="5dp"
             android:id="@+id/linearOrderPrice"
@@ -60,13 +61,14 @@
 
             <TextView
                 android:id="@+id/txtOrderTotal"
-                android:text="$500.00"
+                android:text="5000.00"
                 android:textStyle="bold"
                 android:textColor="@color/order_selected_text_color"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
             <TextView
+                android:visibility="gone"
                 android:paddingRight="10dp"
                 android:paddingLeft="10dp"
                 android:paddingBottom="2dp"
