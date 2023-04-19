@@ -5,13 +5,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.ashish.royalmobileadminapp.Constants.user_email
-import com.ashish.royalmobileadminapp.Constants.user_pref
-import com.ashish.royalmobileadminapp.R
-import com.ashish.royalmobileadminapp.data.model.Admin_Login_Request
+import com.ashish.royalmobileadminapp.utils.Constants.user_email
+import com.ashish.royalmobileadminapp.utils.Constants.user_pref
+import com.ashish.royalmobileadminapp.data.auth.Admin_Login_Request
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
 import com.ashish.royalmobileadminapp.databinding.ActivityLoginBinding
-import com.surajmanshal.mannsignadmin.network.NetworkService
+import com.ashish.royalmobileadminapp.network.Network_Service
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
 
         val email = binding.edtEmail.text.toString()
         val pass = binding.edtPassword.text.toString()
-        val db = NetworkService.networkInstance
+        val db = Network_Service.networkInstance
         val sharedPreferences= getSharedPreferences(user_pref, Context.MODE_PRIVATE)
 
         val r = db.login(Admin_Login_Request(adminEmail = email, adminPassword = pass))
@@ -79,7 +78,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Simple_Response?>, t: Throwable) {
-                binding.loginTitle.text = t.message.toString()
+//                binding.loginTitle.text = t.message.toString()
                 Toast.makeText(this@LoginActivity, t.message.toString(), Toast.LENGTH_LONG).show()
             }
         })

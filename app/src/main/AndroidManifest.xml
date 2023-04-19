@@ -2,8 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -11,7 +14,38 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.RoyalMobileAdminApp"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".activity.CustomerDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AllCustomerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".product.AllOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".product.AccessoriesDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".product.MobileDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".product.AddCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AddAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".product.ProductActivityDetails"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ForgetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Logout_Activity"
+            android:exported="false" />
         <activity
             android:name=".product.Add_Brand_Activity"
             android:exported="false" />
@@ -35,17 +69,16 @@
             android:exported="false" />
         <activity
             android:name=".activity.LoginActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".activity.MainActivity"
-            android:exported="false">
-
         </activity>
     </application>
 
