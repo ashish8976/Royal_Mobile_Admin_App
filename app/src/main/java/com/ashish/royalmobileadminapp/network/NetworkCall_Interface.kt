@@ -22,10 +22,10 @@ interface NetworkCall_Interface
     fun register(@Body registerDetails: Admin_Register_Request) : Call<Simple_Response>
 
     @POST("brand/add")
-    fun addbrand(@Body brandDetails : Brand) : Call<Simple_Response>
+   suspend fun addbrand(@Body brandDetails : Brand) : Simple_Response
 
     @POST("category/add")
-    fun addCategory(@Body categoryDetails: Category) : Call<Simple_Response>
+    suspend fun addCategory(@Body categoryDetails: Category) : Simple_Response
 
     @Multipart
     @POST("profileImage/upload")
