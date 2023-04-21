@@ -81,7 +81,7 @@ class AddProductActivity : AppCompatActivity() {
                     it.brand_name==edtproductBrandname.selectedItem.toString()
                 }
                 if (BrandName.isNotEmpty()) {
-                   // brand_id = BrandName.first().brand_id
+                    brand_id = BrandName.first().brand_id
                 }
             }
         }
