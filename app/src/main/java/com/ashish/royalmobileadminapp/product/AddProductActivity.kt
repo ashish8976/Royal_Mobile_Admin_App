@@ -45,6 +45,7 @@ class AddProductActivity : AppCompatActivity() {
             intent.putExtra("pId",binding.edtProductId.text.toString())
             startActivityForResult(intent, 2)
         }
+
         binding.addAccessories.setOnClickListener {
             val intent = Intent(this, AddAccessroiesActivity::class.java)
             intent.putExtra("pId",binding.edtProductId.text.toString())
@@ -113,7 +114,7 @@ class AddProductActivity : AppCompatActivity() {
             }else{
                 Toast.makeText(
                     this@AddProductActivity,
-                    "hii",
+                    "Please Enter Data",
                     Toast.LENGTH_LONG
                 ).show()
             }

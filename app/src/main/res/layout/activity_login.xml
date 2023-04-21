@@ -53,6 +53,8 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/background"
         android:hint="Password"
+        app:passwordToggleTint="@color/black"
+        app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/email_container"

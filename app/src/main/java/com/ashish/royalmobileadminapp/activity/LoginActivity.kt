@@ -11,6 +11,7 @@ import com.ashish.royalmobileadminapp.data.auth.Admin_Login_Request
 import com.ashish.royalmobileadminapp.data.response.Simple_Response
 import com.ashish.royalmobileadminapp.databinding.ActivityLoginBinding
 import com.ashish.royalmobileadminapp.network.Network_Service
+import com.ashish.royalmobileadminapp.utils.Constants.user_email_details
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun isLoggedIn() {
         val sharedPreferences= getSharedPreferences(user_pref, Context.MODE_PRIVATE)
-        email = sharedPreferences.getString(user_email,null)
+        email = sharedPreferences.getString(user_email_details,null)
         if(!email.isNullOrEmpty()){
             startActivity(Intent(this,MainActivity::class.java))
             Toast.makeText(this@LoginActivity,"Navigate to homepage",Toast.LENGTH_LONG).show()
@@ -64,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
                 if (b != null) {
                     if(b.success){
                         val s = sharedPreferences.edit()
-                        s.putString(user_email,email)
+                        s.putString(user_email_details,email)
                         s.apply()
                         Toast.makeText(this@LoginActivity, "Login success", Toast.LENGTH_LONG).show()
                         startActivity(Intent(this@LoginActivity,MainActivity::class.java))

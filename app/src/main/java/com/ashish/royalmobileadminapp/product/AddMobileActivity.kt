@@ -111,7 +111,12 @@ class AddMobileActivity : AppCompatActivity() {
             "Lime" to "#c6ff00",
             "Black" to "#212121",
             "White" to "#fafafa",
-            "Silver" to "#9e9e9e"
+            "Silver" to "#9e9e9e",
+            "Yellow" to "#ffff00",
+            "Purple" to "#673ab7",
+            "Dark Pink" to "#d81b60",
+            "Brown" to "#795548",
+            "Gray" to "#607d8b"
         )
 
         val colorAdapter = ArrayAdapter(

@@ -8,6 +8,7 @@ object Constants {
     const val user_pref = "user"
     const val user_register = "register"
     const val user_email = "email"
+    const val user_email_details="email_admin"
     const val PICK_IMAGE_REQUEST = 1
     const val category = ""
     const val brand = ""
