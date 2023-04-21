@@ -8,23 +8,6 @@
     android:orientation="vertical"
     tools:context=".product.AddCategoryActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_margin="20dp"
-        android:id="@+id/CategoryId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/background"
-        android:hint="Category Id">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtCategoryId"
-            android:textColor="@color/black"
-            android:background="@drawable/background"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="TouchTargetSizeCheck" />
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_margin="20dp"

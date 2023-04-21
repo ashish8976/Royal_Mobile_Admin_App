@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.ashish.royalmobileadminapp.activity.AddAdminActivity
 import com.ashish.royalmobileadminapp.activity.AllCustomerActivity
 import com.ashish.royalmobileadminapp.activity.MainActivity
@@ -53,7 +54,34 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
 
+        binding.adminLogout.setOnClickListener {
+            logout()
+        }
+
         return binding.root
+    }
+
+    private fun logout() {
+        val hello = AlertDialog.Builder(requireContext())
+        hello.setTitle("Logout")
+        hello.setMessage("Click Yes to Logout")
+        hello.setPositiveButton("Yes"){d,w->
+            logoutUser()
+        }
+        hello.setNegativeButton("No"){d,w->
+            Toast.makeText(requireContext(),"Logout Cencle",Toast.LENGTH_LONG).show()
+            d.dismiss()
+        }
+        hello.show()
+    }
+
+    private fun logoutUser() {
+        val sharedPreferences = requireContext().getSharedPreferences(Constants.user_pref,Context.MODE_PRIVATE)
+        val s = sharedPreferences.edit()
+        s.clear()
+        s.putString(Constants.user_email,null)
+        s.apply()
+        requireActivity().finish()
     }
 
     private fun getAdmin()
